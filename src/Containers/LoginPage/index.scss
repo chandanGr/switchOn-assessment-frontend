@@ -1,0 +1,75 @@
+/** @format */
+
+@import "../../Scss/Common/index.scss";
+
+.loginPage {
+	@include center;
+	width: 100vw;
+	height: 100vh;
+	&__image {
+		@include center;
+		flex: 1;
+		height: 100%;
+		background: $primaryColor;
+		& img {
+			position: relative;
+			left: -50px;
+			width: 100%;
+			transform: scale(1.2);
+		}
+	}
+	&__loginContainer {
+		@include center;
+		flex: 1;
+		height: 100%;
+		&__form {
+			&--signIn {
+				width: 60%;
+				&__header {
+					font-size: 28px;
+					font-weight: 700;
+					margin: 20px 0px;
+					white-space: nowrap;
+					color: $secondaryColor;
+				}
+				// &__field {
+				// 	margin: 30px 0px;
+				// 	& .ant-input {
+				// 		height: 40px;
+				// 	}
+				// 	&__label {
+				// 		margin-bottom: 5px;
+				// 	}
+				// }
+				&__submitButton {
+					@include center;
+					background: $secondaryColor;
+					color: white;
+					font-size: large;
+					font-weight: 500;
+					border: none;
+					outline: none;
+					height: 40px;
+					border-radius: 4px;
+					cursor: pointer;
+				}
+				&__goToRegisterForm {
+					cursor: pointer;
+					font-size: smaller;
+				}
+			}
+		}
+	}
+}
+
+.field {
+	.ant-select.ant-select-enabled {
+		width: 100% !important;
+		& .ant-select-selection {
+			height: 40px;
+			& .ant-select-selection__rendered {
+				line-height: 40px;
+			}
+		}
+	}
+}
