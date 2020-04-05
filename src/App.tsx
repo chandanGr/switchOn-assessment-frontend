@@ -15,7 +15,7 @@ function App(props: any) {
           <Route path='/' exact component={LoginPage} />
           <Route path='/login' exact component={LoginPage} />
           <Route path='/home' exact component={HomePage} />
-          <Route path='' exact render={() => {
+          <Route path='*' exact render={() => {
             return (
               <Result
                 status="404"

@@ -20,6 +20,7 @@ function InfoSection(props: InfoSectionProps) {
       { label: 'Chemistry', value: 'chemistry' },
       { label: 'Biology', value: 'biology' },
       { label: 'Physics', value: 'physics' },
+      { label: 'Science', value: 'science' },
     ];
     const tempDepartmentOptions: IOptionData[] = [];
     departmentOptions.map((department: IOptionData) => {

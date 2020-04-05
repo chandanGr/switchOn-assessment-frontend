@@ -13,10 +13,13 @@ import DashBoardTabLoader from '../../Components/DashBoardTabLoader';
 export declare const IValidation: ["ALL_FIELDS", "EMAIL", "PASSWORD_MISMATCH", 'NO_ERROR'];
 
 const hardCodedOptions: IOptionData[] = [
-  { label: 'Science', value: 'science' },
   { label: 'Maths', value: 'maths' },
   { label: 'History', value: 'history' },
-]
+  { label: 'Chemistry', value: 'chemistry' },
+  { label: 'Biology', value: 'biology' },
+  { label: 'Physics', value: 'physics' },
+  { label: 'Science', value: 'science' },
+];
 
 function LoginPage(props: any) {
   const [registerFormSelected, setRegisterFormSelected] = useState<boolean>(false)
