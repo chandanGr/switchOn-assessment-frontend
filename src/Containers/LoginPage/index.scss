@@ -57,6 +57,19 @@
 					cursor: pointer;
 					font-size: smaller;
 				}
+				&__errorMessage {
+					@include center;
+					padding: 5px 0px;
+					background-color: $alertColor;
+					color: white;
+					border-radius: 3px;
+				}
+				&__successMsg {
+					@include center;
+					padding: 5px 0px;
+					color: $secondaryColor;
+					border-radius: 3px;
+				}
 			}
 		}
 	}

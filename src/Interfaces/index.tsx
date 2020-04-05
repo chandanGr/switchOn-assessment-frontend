@@ -10,3 +10,16 @@ export interface IUserDetail {
   department: string,
   token: string,
 }
+
+export interface IFormItem {
+  label?: string;
+  value?: string;
+  sticker?: string;
+  confirmBox?: boolean;
+}
+
+export interface ILabelValue {
+  label: string;
+  value: string;
+  active?: string;
+}

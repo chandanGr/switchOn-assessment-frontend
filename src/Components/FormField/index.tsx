@@ -19,6 +19,7 @@ interface FormFieldProps {
   errorMessage?: string;
   optionData?: IOptionData[];
   optionPlaceholder?: string;
+  selectFieldDisabled?: boolean
 }
 
 function FormField(props: FormFieldProps) {
@@ -28,7 +29,7 @@ function FormField(props: FormFieldProps) {
     return (
       <div className={`field field--${props.name}`}>
         <div className={`field__label label--${props.name}`}>
-          {props.label}
+          {props.label} <span className='field__label__astrek'>*</span>
         </div>
         <Select
           showSearch
@@ -36,6 +37,7 @@ function FormField(props: FormFieldProps) {
           placeholder={props.optionPlaceholder}
           optionFilterProp="children"
           onChange={(value: any, option: any) => props.onChange(props.name, value)}
+          disabled={props.selectFieldDisabled}
         >
           {
             props.optionData && props.optionData.map((data: IOptionData) => {
@@ -49,9 +51,11 @@ function FormField(props: FormFieldProps) {
     return (
       <div className={`field field--${props.name}`}>
         <div className={`field__label label--${props.name}`}>
-          {props.label}
+          {props.label} <span className='field__label__astrek'>*</span>
         </div>
-        <TextArea rows={props.textAreaRows} />
+        <TextArea rows={props.textAreaRows}
+          onChange={(e: any) => props.onChange(props.name, e.target.value)}
+        />
       </div>
     );
   }
@@ -59,7 +63,7 @@ function FormField(props: FormFieldProps) {
   return (
     <div className={`field field--${props.name}`}>
       <div className={`field__label label--${props.name}`}>
-        {props.label}
+        {props.label} <span className='field__label__astrek'>*</span>
       </div>
       <Input placeholder={props.placeholder} type={props.type} name={props.name}
         onChange={(e: any) => props.onChange(props.name, e.target.value)} />

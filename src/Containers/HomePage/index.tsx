@@ -1,31 +1,38 @@
-import React, { useEffect, useState } from 'react'
-
+import React, { useEffect, useState } from 'react';
 import Toolbar from '../../Components/Toolbar';
 import InfoSection from '../../Components/InfoSection';
 
 import './index.scss';
-import { IUserDetail } from '../../Interfaces';
-import FormDetail from '../../Components/FormDetail';
-import Sidebar from '../../Components/Sidebar';
+import Table from '../../Components/Table';
+import { CallApi } from '../../Services/CallApi';
+import DashBoardTabLoader from '../../Components/DashBoardTabLoader';
 
 function HomePage() {
-  const [userInfo, setUserInfo] = useState<IUserDetail>();
+  const [userInfo, setUserInfo] = useState<any>();
 
   useEffect(() => {
-    const userDetail = localStorage.getItem('userDetails');
-    userDetail && setUserInfo(JSON.parse(userDetail))
+    const token = sessionStorage.getItem('userDetailId');
+    token && setUserInfo(JSON.parse(token))
+    token && CallApi('/user/' + JSON.parse(token), 'GET')
+      .then((parsedData: any) => {
+        setUserInfo(parsedData)
+      })
   }, [])
 
-  console.log('the user info is ', userInfo)
   if (!userInfo) {
-    return <p>Loading....</p>
+    return <DashBoardTabLoader />
   }
+
+  if (!userInfo.data) {
+    return <p className="Loading"></p>
+  }
+
   return (
     <div className='homePage'>
       <Toolbar />
-      <Sidebar />
-      <InfoSection userDetail={userInfo} />
-      <FormDetail />
+      {/* <Sidebar /> */}
+      <InfoSection userDetail={userInfo.data} />
+      <Table userDetail={userInfo.data} />
     </div>
   )
 }

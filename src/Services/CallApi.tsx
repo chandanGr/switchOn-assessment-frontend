@@ -1,13 +1,9 @@
 export const setHeaders = () => {
-  // const token = localStorage.get('token', true);
   const additionalHeaders: any = {};
   additionalHeaders['Content-Type'] = 'application/json';
   additionalHeaders.Accept = 'application/json';
   additionalHeaders['Cache-Control'] = 'no-cache';
   additionalHeaders.Pragma = 'no-cache';
-  // if (token && token.token && token.role && token.userName && token.userGuid) {
-  //   additionalHeaders.Authorization = `Bearer ${token.token}`;
-  // }
   return additionalHeaders;
 };
 
@@ -35,17 +31,19 @@ async function postRequest(url: string, body: any, headers: {}) {
   }
 }
 
-
 type IRequestType = 'POST' | 'GET';
+const REACT_APP_BASE_APP_URL = "https://assessment-demo.herokuapp.com";
 
 export async function CallApi(url: string, requestType: IRequestType, data?: any) {
-
   if (requestType === 'GET') {
-    const response = await fetch(url);
+    const response = await fetch(REACT_APP_BASE_APP_URL + url, {
+      method: requestType,
+      headers: setHeaders(),
+    });
     const parsedData = await response.json();
     return parsedData;
   } else {
-    const response = await fetch(url, {
+    const response = await fetch(REACT_APP_BASE_APP_URL + url, {
       method: requestType,
       headers: setHeaders(),
       body: JSON.stringify(data),
