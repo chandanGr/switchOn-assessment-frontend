@@ -1,0 +1,51 @@
+/** @format */
+
+@import "../../Scss/Common/index.scss";
+
+.formPopup {
+	&.hide {
+		display: none;
+	}
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	background: white;
+	z-index: 1;
+	padding: 30px;
+	&__header {
+		font-size: x-large;
+		color: $secondaryColor;
+		&__formMsg {
+			width: 100%;
+			color: $thirdColor;
+			font-size: medium;
+		}
+	}
+	&__button {
+		@include center;
+		width: 100%;
+		background: $secondaryColor;
+		color: white;
+		height: 40px;
+		border-radius: 6px;
+		cursor: pointer;
+		font-size: large;
+	}
+	&__closeButton {
+		font-size: x-large;
+		position: absolute;
+		top: -40px;
+		right: -30px;
+		color: white;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background: $secondaryColor;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,25 @@
+/** @format */
+
+$primaryColor: #f7f7f7;
+$secondaryColor: #00b894;
+$thirdColor: #34495e;
+$alertColor: #ff7675;
+$backgroundColor: #f9f9f9;
+
+@mixin center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.shadow {
+	box-shadow: 0 2px 11px 0 #eef4ff;
+	border-radius: 6px;
+}
+
+.darkbackground {
+	background: #000000;
+	opacity: 0.8;
+	filter: blur(500px);
+	z-index: 0 !important;
+}

@@ -1,0 +1,30 @@
+/** @format */
+
+@import "../../Scss/Common/index.scss";
+
+.sidebar {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	width: 100px;
+	position: fixed;
+	background: white;
+	top: 0px;
+	padding-top: 80px;
+	z-index: 1;
+	&__icon {
+		width: 100%;
+		text-align: center;
+		margin: 10px 0px;
+		padding: 20px 0px;
+		cursor: pointer;
+	}
+}
+
+.sidebar__icon.icon--active {
+	background: $secondaryColor;
+	color: white;
+	font-size: large;
+	font-weight: 500;
+}

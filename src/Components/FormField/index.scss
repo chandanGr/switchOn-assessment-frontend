@@ -1,0 +1,25 @@
+/** @format */
+@import "../../Scss/Common/index.scss";
+
+.field {
+	margin: 20px 0px;
+	& .ant-input {
+		height: 40px;
+	}
+	&__label {
+		margin-bottom: 5px;
+		&__astrek {
+			color: $alertColor;
+		}
+	}
+	& .ant-select.ant-select-enabled,
+	.ant-select.ant-select-disabled {
+		width: 100% !important;
+		& .ant-select-selection {
+			height: 40px;
+			& .ant-select-selection__rendered {
+				line-height: 40px;
+			}
+		}
+	}
+}
