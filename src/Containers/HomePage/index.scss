@@ -23,6 +23,7 @@
 					color: $secondaryColor;
 					font-size: large;
 					font-weight: 500;
+					background: $backgroundColor;
 					&:after {
 						content: "";
 						position: absolute;
@@ -30,7 +31,7 @@
 						height: 30px;
 						width: 100%;
 						left: 0px;
-						background: white;
+						background: $backgroundColor;
 					}
 				}
 			}
@@ -39,6 +40,7 @@
 			padding: 30px;
 			min-height: 200px;
 			margin-bottom: 20px;
+			background: $backgroundColor;
 		}
 		&__title {
 			font-size: xx-large;

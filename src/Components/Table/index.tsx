@@ -15,9 +15,9 @@ import { CallApi } from '../../Services/CallApi';
 // ]
 
 const tabs: ILabelValue[] = [
-  { label: 'Department Requests', value: 'departmentForms' },
-  { label: 'Requested Forms', value: 'requestedForms' },
-  { label: 'Recieved Forms', value: 'recieved Forms' },
+  { label: 'Requests in department', value: 'departmentForms' },
+  { label: 'Request sent ', value: 'requestedForms' },
+  { label: 'Request received ', value: 'recieved Forms' },
 
 ]
 
