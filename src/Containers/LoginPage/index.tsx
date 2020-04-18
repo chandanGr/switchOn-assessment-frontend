@@ -125,7 +125,7 @@ function LoginPage(props: any) {
 
           {/* login header */}
           <div className="loginPage__loginContainer__form--signIn__header">
-            {registerFormSelected ? 'Register to Switchon Assignment' : 'Login to Switchon Assignment'}
+            {registerFormSelected ? 'Register to Department Assignment' : 'Login to Department Assignment'}
           </div>
           {successMsg ?
             <div className="loginPage__loginContainer__form--signIn__successMsg">
